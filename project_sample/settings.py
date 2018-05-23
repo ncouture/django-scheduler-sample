@@ -12,19 +12,20 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE':
+        'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_PATH, 'project_sample.db'),
-        # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'HOST':
+        '',
+        'PORT': '',  # Set to empty string for default.
     }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -52,7 +53,6 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = PROJECT_PATH + '/media/'
-
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -85,7 +85,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '1-%gfd@@8l$8r=ck_7^dy5_x!a0f5%qfj@ix#!xig(_2zq&b&2'
+SECRET_KEY = 'xyzabc@@8l$8r=ck_7^dy5_x!a0f5%qfj@ix#!xig(_2zq&b&2'
 
 # List of callables that know how to import templates from various sources.
 
@@ -120,9 +120,10 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'djangobower',
     'schedule',
-    'project_sample'
+    'project_sample',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'django_extensions'
 )
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -153,12 +154,7 @@ LOGGING = {
     }
 }
 
-BOWER_INSTALLED_APPS = (
-    'jquery',
-    'jquery-ui',
-    'bootstrap',
-    'fullcalendar'
-)
+BOWER_INSTALLED_APPS = ('jquery', 'jquery-ui', 'bootstrap', 'fullcalendar')
 
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -174,3 +170,5 @@ TEMPLATES = [{
         ],
     },
 }]
+
+USE_FULLCALENDAR = True
